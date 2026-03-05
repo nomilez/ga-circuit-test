@@ -1,7 +1,7 @@
 services:
   # Backend API (Free tier - 750 hours/month, spins down after 15 min idle)
   - type: web
-    name: ga-circuit-test-backend-a142a8
+    name: ga-circuit-test-backend-fbf2f6
     runtime: python
     plan: free
     buildCommand: pip install -r backend/requirements.txt
@@ -14,13 +14,13 @@ services:
 
   # Frontend (Free static site)
   - type: web
-    name: ga-circuit-test-frontend-a142a8
+    name: ga-circuit-test-frontend-fbf2f6
     runtime: static
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/build
     envVars:
       - key: VITE_API_URL
-        value: https://ga-circuit-test-backend-a142a8.onrender.com
+        value: https://ga-circuit-test-backend-fbf2f6.onrender.com
     headers:
       - path: /assets/*.js
         name: Content-Type
